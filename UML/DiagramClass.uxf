@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>500</y>
+      <w>340</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Product
+--
++id: int
++idProducer: int
++name: String
++quantity: int
++price: double
+--
++DetailProduct()
++DisplaySupply()
++UpdateSupply()
++DeleteSupply()
++AddToCart(idConsumer, idProduct, quantity)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>260</y>
+      <w>210</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>Consumer
+--
++id: int
+#name: String
+#email: String
+#password: String(encrypt)
+#adress: String
+#phone: String
+#producer: bool
+--
++DisplayProduct()
+#NewAccount()
+#UpdateAccount()
+#DeleteAccount()
+#NewCart()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>580</y>
+      <w>210</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Producer
+--
+#siretNumber: String
+--
+#NewProduct()
+#UpdateProduct()
+#DeleteProduct()
+#SendOrder()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>260</y>
+      <w>320</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Cart
+--
++idConsumer
++List&lt;ProductSelect&gt;(idProduct, quantity)
+--
+#UpdateCart()
+#DeleteCart()
+#ConfirmCart()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>510</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+if producteur=True</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>280</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+open &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>450</y>
+      <w>220</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+                 Select &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>580</y>
+      <w>220</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+add
+m1=1
+m2=0..n
+</panel_attributes>
+    <additional_attributes>10.0;50.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>380</y>
+      <w>790</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Order
+If pay=confirm </panel_attributes>
+    <additional_attributes>10.0;340.0;770.0;340.0;770.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>380</y>
+      <w>90</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+Compose
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>260</y>
+      <w>320</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Order
+--
++id
++idConsumer
++List&lt;ProductSelect&gt;(idProduct, quantity)
+--
+#Order()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>320</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
